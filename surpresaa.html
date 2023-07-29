@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escolha do Filme Surpresa</title>
+    <style>
+        /* Estilo para ajustar a imagem à largura do site em dispositivos móveis */
+        img {
+            max-width: 70vw; /* Reduzindo a largura da imagem */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4287f5;
+        }
+
+        .descubra-button,
+        .filme-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #ffffff;
+        }
+
+        .descubra-button {
+            background-color: #f29a9a;
+        }
+
+        .filme-button {
+            background-color: #8cd19d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha do Filme Surpresa</h1>
+    <p>Olá, Senhora Rosalice, vulgo ninhaaa! Bem-vinda ao seu momento de relaxamento.</p>
+    <button class="descubra-button">Clique e Descubra</button>
+    <br>
+    <br>
+    <p>Clique no botão abaixo para escolher o filme surpresa:</p>
+    <button class="filme-button">Escolher Filme Surpresa</button>
+    <p id="filmeEscolhido"></p>
+    <p id="mensagemEspecial"></p>
+
+    <!-- Imagem aleatória e fofa ajustada para a largura do site em dispositivos móveis -->
+    <img src="https://i.imgur.com/OYa7J0g.jpg" alt="Imagem Aleatória Fofa">
+
+    <script>
+        const filmesSurpresa = [
+            "A Bela e a Fera",
+            "O Senhor dos Anéis",
+            "O Diabo Veste Prada",
+            "Forrest Gump",
+            "De Repente 30",
+            "Esqueceram de Mim",
+            "Mamma Mia!",
+            "Jurassic Park",
+            "Dirty Dancing",
+            "Titanic",
+            "Harry Potter e a Pedra Filosofal"
+        ];
+
+        function escolherFilmeSurpresa() {
+            const indiceFilme = Math.floor(Math.random() * filmesSurpresa.length);
+            return filmesSurpresa[indiceFilme];
+        }
+
+        document.querySelector(".descubra-button").addEventListener("click", function() {
+            alert("você merece uma fabrica de chocolate, mas ainda não cheguei lá ainda, então aproveite uma barrinha pelo menos, amo você.");
+        });
+
+        document.querySelector(".filme-button").addEventListener("click", function() {
+            const filmeEscolhido = escolherFilmeSurpresa();
+            document.querySelector("#filmeEscolhido").textContent = `Filme Surpresa: ${filmeEscolhido}`;
+            document.querySelector("#mensagemEspecial").textContent = "Você merece esse descanso e saiba que eu te amo muito!";
+        });
+    </script>
+</body>
+</html>
